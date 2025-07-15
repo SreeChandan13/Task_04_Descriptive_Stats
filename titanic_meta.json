@@ -1,0 +1,8 @@
+{
+  "file": "datasets/titanic.csv",
+  "group_by": ["Pclass", "Sex"],
+  "numeric_columns": ["Age", "Fare"],
+  "categorical_columns": ["Embarked", "Sex", "Survived"],
+  "date_columns": [],
+  "target": "Survived"
+}

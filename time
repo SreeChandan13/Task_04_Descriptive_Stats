@@ -1,0 +1,25 @@
+import time
+from analysis.pure_python_stats import run_pure_python_analysis
+from analysis.pandas_stats import run_pandas_analysis
+from analysis.polars_stats import run_polars_analysis
+
+meta_file = "config/netflix_meta.json"  # or titanic_meta.json or your dataset meta
+
+def time_function(func, *args):
+    start = time.time()
+    func(*args)
+    end = time.time()
+    return end - start
+
+if __name__ == "__main__":
+    print("Timing Pure Python:")
+    t1 = time_function(run_pure_python_analysis, meta_file)
+    print(f"Pure Python took {t1:.3f} seconds\n")
+
+    print("Timing Pandas:")
+    t2 = time_function(run_pandas_analysis, meta_file)
+    print(f"Pandas took {t2:.3f} seconds\n")
+
+    print("Timing Polars:")
+    t3 = time_function(run_polars_analysis, meta_file)
+    print(f"Polars took {t3:.3f} seconds\n")

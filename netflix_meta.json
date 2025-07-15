@@ -1,0 +1,6 @@
+{
+  "file": "datasets/netflix.csv",
+  "numeric_columns": ["release_year"],
+  "categorical_columns": ["type", "rating", "country", "duration", "listed_in"],
+  "group_by": ["type", "country"]
+}
