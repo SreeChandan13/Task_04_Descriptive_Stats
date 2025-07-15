@@ -10,6 +10,23 @@ Pure Python	0.214
 Polars	0.120 (fastest)
 Pandas	1.621
 
+Datasets Used
+To demonstrate that the system can handle arbitrary datasets beyond the original election-related files, we applied our analysis scripts to two well-known public datasets:
+
+Netflix Dataset: Contains metadata on thousands of Netflix titles, including type, country, rating, release year, and duration.
+
+Titanic Dataset: Contains passenger information such as age, fare, sex, class, and survival status.
+
+Both datasets were analyzed using pure Python, Pandas, and Polars, with the analyses driven by metadata configuration files (in JSON format). These metadata files specify:
+
+Which columns are numeric or categorical
+
+Which fields to group by
+
+The filename of the dataset
+
+This modular design ensures that the statistics system is dataset-agnostic and can easily be extended to new datasets by simply updating the metadata, without rewriting the analysis code.
+
 🔍 Key Insights
 Polars was the fastest due to its Rust backend and support for multi-threading. It’s ideal for high-performance data analysis.
 
